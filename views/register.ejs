@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Register Screen</title>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    :root {
+      --main-color: #0ca396;
+      --background-color: #3fe2c4;
+      --light-background: #ade6be;
+      --gradient-background: linear-gradient(
+        to top,
+        var(--light-background),
+        #87ebc8
+      );
+      --form-background: #50c8783a;
+      --box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      --border-radius: 20px;
+      --input-background: rgba(255, 255, 255, 0.5);
+      --button-background: rgba(255, 255, 255, 0.5);
+      --hover-background: hsla(0, 0%, 96%, 0.5);
+      --social-background: rgba(255, 255, 255, 0.27);
+      --social-hover-background: rgba(255, 255, 255, 0.47);
+      --text-color: #2d2d2d6c;
+      --heading-font: 'Inter', sans-serif;
+    }
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: var(--heading-font);
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      position: relative;
+      background: var(--gradient-background);
+    }
+
+    .container {
+      width: 105vh;
+      height: 63vh;
+      background: var(--form-background);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
+    }
+
+    .image-container {
+      width: 120%;
+      overflow: hidden;
+      position: relative;
+      right: 50px;
+    }
+
+    .container img {
+      width: 120%;
+      padding: 15px;
+    }
+
+    .content-container {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 4%;
+      margin-top: 5%;
+    }
+
+    .content-heading {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      padding: 20px 10px 10px 0px;
+    }
+
+    .content-subtext {
+      font-size: 15px;
+      text-align: center;
+      color: var(--text-color);
+      padding-bottom: 7px;
+      letter-spacing: 0.5px;
+      outline: none;
+      border: none;
+    }
+
+    .form-label {
+      display: block;
+      margin-top: 13px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .form-input {
+      display: block;
+      height: 45px;
+      width: 90%;
+      border-radius: 8px;
+      background-color: var(--input-background);
+      padding: 0 10px;
+      margin-top: 8px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .form-input:hover {
+      border: 1px solid var(--form-background);
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 20px 40px 20px 0px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .content-container button {
+      padding: 15px;
+      margin-top: 10px;
+      background-color: var(--button-background);
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .content-container button:hover {
+      background-color: var(--hover-background);
+    }
+
+    .signUpWith {
+      position:relative;
+      right:5.5%;
+    }
+
+    .social {
+      display: flex;
+    }
+
+    .social div {
+      background: var(--main-color);
+      width: 140px;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: var(--social-background);
+      color: var(--text-color);
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .social div:nth-child(2) {
+      color: blue;
+    }
+
+    .social div:nth-child(1) {
+      color: rgba(234, 68, 53, 0.734);
+    }
+
+    .social div:hover {
+      background-color: var(--social-hover-background);
+    }
+
+    .social .fb {
+      margin-left: 60px;
+      margin-right: 40px;
+    }
+
+    .social i {
+      margin-right: 10px;
+    }
+  </style>
+  <body>
+    <main class="container">
+      <form action="./register" method="post" class="content-container">
+        <h1 class="content-heading">Register</h1>
+        <p class="content-subtext">Enter your details to create an account</p>
+
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-input"
+          placeholder="Enter your Email"
+          required
+        />
+
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          class="form-input"
+          placeholder="Enter your username"
+          required
+        />
+
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="form-input"
+          placeholder="Enter your password"
+          required
+        />
+
+        <div class="submit-button">
+          <button type="submit" class="submit-button">Let's Go</button>
+        </div>
+
+        <p class="content-subtext signUpWith">Or Signup with</p>
+
+        <div class="social">
+          <div class="go">
+            <i class="fab fa-google"></i>
+            Google
+          </div>
+          <div class="fb">
+            <i class="fab fa-facebook"></i>
+            Facebook
+          </div>
+        </div>
+      </form>
+      <div class="image-container">
+        <img src="./assets/register.png" alt="signUp image" />
+      </div>
+    </main>
+  </body>
+</html>
